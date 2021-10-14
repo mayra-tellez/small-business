@@ -8,11 +8,11 @@ import {
   TableHead,
   TableRow,
   Paper
-} from '@material-ui/core'
+} from '@material-ui/core';
 
 import { businesses } from '../data/businesses';
 
-function Listing() {
+export default function Listing() {
   const [list, setList] = useState(businesses);
 
   useEffect(() => {
@@ -49,5 +49,3 @@ function Listing() {
     </TableContainer>
   )
 }
-
-export default Listing;

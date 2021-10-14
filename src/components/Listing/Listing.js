@@ -10,7 +10,7 @@ import {
   Paper
 } from '@material-ui/core';
 
-import { businesses } from '../data/businesses';
+import { businesses } from '../../data/businesses';
 
 export default function Listing() {
   const [list, setList] = useState(businesses);

@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core';
 
 import { businesses } from '../../data/businesses';
+import styles from './listing.module.css';
 
 export default function Listing() {
   const [list, setList] = useState(businesses);

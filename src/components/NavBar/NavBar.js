@@ -6,18 +6,19 @@ import {
   Typography,
   Button
 } from '@material-ui/core';
+import styles from './navbar.module.css';
 
 export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
+      <AppBar style={{ backgroundColor: "#43a047" }} position="static">
+        <Toolbar className={styles.toolBar}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Austin Small Business
           </Typography>
           <div>
-            <Button color="inherit">Listings</Button>
-            <Button color="inherit">Login</Button>
+            <Button style={{ textTransform: "none" }} color="inherit">Listings</Button>
+            <Button style={{ textTransform: "none" }} color="inherit">Login</Button>
           </div>
         </Toolbar>
       </AppBar>

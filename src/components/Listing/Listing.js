@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Table,
   TableBody,
@@ -38,7 +39,7 @@ export default function Listing() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {business.name}
+                <Link to={`/business/${business.id}`}>{business.name}</Link>
               </TableCell>
               <TableCell>{business.description}</TableCell>
               <TableCell>{business.operatingHours}</TableCell>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import {
   AppBar,
   Box,
@@ -18,7 +20,9 @@ export default function NavBar() {
           </Typography>
           <div>
             <Button style={{ textTransform: "none" }} color="inherit">Listings</Button>
-            <Button style={{ textTransform: "none" }} color="inherit">Login</Button>
+            <Button style={{ textTransform: "none" }} color="inherit">
+              <Link to="/login">Login</Link>
+            </Button>
           </div>
         </Toolbar>
       </AppBar>

@@ -19,7 +19,9 @@ export default function NavBar() {
             Austin Small Business
           </Typography>
           <div>
-            <Button style={{ textTransform: "none" }} color="inherit">Listings</Button>
+            <Button style={{ textTransform: "none" }} color="inherit">
+              <Link to="/">Listings</Link>
+            </Button>
             <Button style={{ textTransform: "none" }} color="inherit">
               <Link to="/login">Login</Link>
             </Button>

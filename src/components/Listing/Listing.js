@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Table,
@@ -11,15 +10,9 @@ import {
   Paper
 } from '@material-ui/core';
 
-import { businesses } from '../../data/businesses';
-import styles from './listing.module.css';
+// import styles from './listing.module.css';
 
-export default function Listing() {
-  const [list, setList] = useState(businesses);
-
-  useEffect(() => {
-    console.log("business list:", list);
-  }, [list]);
+export default function Listing({ businesses }) {
 
   return (
     <TableContainer component={Paper}>
@@ -33,7 +26,7 @@ export default function Listing() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {list.map((business) => (
+          {businesses.map((business) => (
             <TableRow
               key={business.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

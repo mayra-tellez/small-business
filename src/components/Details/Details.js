@@ -1,9 +1,8 @@
 import React from 'react';
-import { businesses } from '../../data/businesses';
 
 export default function Details(props) {
   const id = props.match.params.id;
-  const business = businesses.find(b => b.id == id);
+  const business = props.businesses.find(b => b.id == id);
 
   return (
     <div>

@@ -5,9 +5,10 @@ import {
   Container
 } from '@material-ui/core';
 
-export default function Login() {
+export default function Login(props) {
   return (
     <Container maxWidth="sm">
+      <h2>{props.user.username}</h2>
       <form>
         <TextField
           required

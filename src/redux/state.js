@@ -2,7 +2,7 @@
 export default {
   user: {
     username: "Example User",
-    email: "exampleuser@email.com"
+    password: "uuidprobably"
   },
   businesses: [
     {

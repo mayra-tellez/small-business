@@ -5,22 +5,28 @@ import {
   Container
 } from '@material-ui/core';
 
-export default function Login(props) {
+export default function Login() {
+  const login = (e) => {
+    e.preventDefault()
+    // max-age = 300 (in seconds(aka 5 minutes))
+    document.cookie = "loggedIn=true; max-age=300"
+    window.location.replace("/")
+  }
+
   return (
     <Container maxWidth="sm">
-      <h2>{props.user.username}</h2>
-      <form>
+      <form onSubmit={login}>
         <TextField
           required
-          // onChange={this.handleTextChange}
-          // value={this.state.username}
+          // onChange={handleChange}
+          // value={value}
           name="username"
           label="Username"
           type="text" />
         <TextField
           required
-          // onChange={this.handleTextChange}
-          // value={this.state.password}
+          // onChange={handleChange}
+          // value={value}
           name="password"
           label="Password"
           type="password" />
@@ -28,7 +34,8 @@ export default function Login(props) {
           type="submit"
           className="login-button"
           variant="contained"
-          color="primary">Login</Button>
+          color="primary">
+        Login</Button>
       </form>
     </Container>
   )

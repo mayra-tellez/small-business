@@ -17,25 +17,25 @@ export default function NavBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{ backgroundColor: "#43a047" }} position="static">
+      <AppBar style={{ backgroundColor: "#3CB371" }} position="static">
         <Toolbar className={styles.toolBar}>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Austin Small Business
           </Typography>
           <div>
             <Button style={{ textTransform: "none" }} color="inherit">
-              <Link to="/">Listings</Link>
+              <Link to="/" className={styles.link}>Listings</Link>
             </Button>
             { cookies.loggedIn && 
               <Button style={{ textTransform: "none" }} color="inherit">
-                <Link to="/addlisting">Add</Link>
+                <Link to="/addlisting" className={styles.link}>Add</Link>
               </Button> }
             { cookies.loggedIn ? 
               <Button onClick={() => {document.cookie = "loggedIn="; window.location.replace("/")}} style={{ textTransform: "none" }} color="inherit">
                 Logout
               </Button> :
               <Button style={{ textTransform: "none" }} color="inherit">
-                <Link to="/login">Login</Link>
+                <Link to="/login" className={styles.link}>Login</Link>
               </Button> }
           </div>
         </Toolbar>

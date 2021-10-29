@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   TextField,
-  Button,
-  Container
+  Button
 } from '@material-ui/core';
+import styles from './login.module.css';
 
 export default function Login({ user }) {
   
@@ -17,15 +17,13 @@ export default function Login({ user }) {
   }
 
   return (
-    <Container maxWidth="sm">
-      <form onSubmit={login}>
+    <div className={styles.container}>
+      <form onSubmit={login} className={styles.form}>
         <TextField
-          required
           name="username"
           label="Username"
           type="text" />
         <TextField
-          required
           name="password"
           label="Password"
           type="password" />
@@ -33,9 +31,9 @@ export default function Login({ user }) {
           type="submit"
           className="login-button"
           variant="contained"
-          color="primary">
+          style={{ marginTop: 25, fontWeight: "bold" }}>
         Login</Button>
       </form>
-    </Container>
+    </div>
   )
 }

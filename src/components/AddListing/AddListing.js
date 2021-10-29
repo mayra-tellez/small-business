@@ -8,15 +8,10 @@ import {
   // Divider
 } from '@material-ui/core';
 
-// API KEY - AIzaSyCqxFMhz3e7AN8RcLM_03Igc7sMqe_qnCY
-// Use this key in your application by passing it with the key=API_KEY parameter.
-
 export default function AddListing(props) {
   // console.log('state', props)
 
   // const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-  // const apiKey = 'AIzaSyCqxFMhz3e7AN8RcLM_03Igc7sMqe_qnCY';
 
   // const [defaultCenter, setDefaultCenter] = useState({ lat: 59.95, lng: 30.33 });
   // const [defaultZoom, setDefaultZoom] = useState(11);

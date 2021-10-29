@@ -1,0 +1,12 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.subContainer {
+  width: 650px;
+}
+
+.description {
+  font-size: 18px;
+}

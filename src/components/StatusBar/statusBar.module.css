@@ -1,0 +1,11 @@
+.bar {
+  background-color: lightgray;
+  color: gray;
+  padding-left: 25px;
+  position: relative;
+  z-index: -1;
+}
+
+.text {
+  margin: 0; 
+}

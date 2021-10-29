@@ -29,7 +29,6 @@ export default function Login({ user }) {
           type="password" />
         <Button
           type="submit"
-          className="login-button"
           variant="contained"
           style={{ marginTop: 25, fontWeight: "bold" }}>
         Login</Button>

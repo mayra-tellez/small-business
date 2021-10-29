@@ -3,7 +3,7 @@ import Router from './Router';
 import { BrowserRouter } from 'react-router-dom';
 
 import NavBar from './components/NavBar/NavBar';
-import StatusBar from './components/StatusBar/StatusBar';
+import StatusBar from '../src/containers/StatusBar';
 
 import './App.css';
 

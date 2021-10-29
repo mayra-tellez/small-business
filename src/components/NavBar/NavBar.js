@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import cookie from 'cookie';
 
 import {
   AppBar,
@@ -11,6 +12,9 @@ import {
 import styles from './navbar.module.css';
 
 export default function NavBar() {
+  const cookies = cookie.parse(document.cookie);
+  console.log('navBar cookies status:', cookies.loggedIn);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar style={{ backgroundColor: "#43a047" }} position="static">
@@ -22,9 +26,17 @@ export default function NavBar() {
             <Button style={{ textTransform: "none" }} color="inherit">
               <Link to="/">Listings</Link>
             </Button>
-            <Button style={{ textTransform: "none" }} color="inherit">
-              <Link to="/login">Login</Link>
-            </Button>
+            { cookies.loggedIn && 
+              <Button style={{ textTransform: "none" }} color="inherit">
+                <Link to="/addlisting">Add</Link>
+              </Button> }
+            { cookies.loggedIn ? 
+              <Button onClick={() => {document.cookie = "loggedIn="; window.location.replace("/")}} style={{ textTransform: "none" }} color="inherit">
+                Logout
+              </Button> :
+              <Button style={{ textTransform: "none" }} color="inherit">
+                <Link to="/login">Login</Link>
+              </Button> }
           </div>
         </Toolbar>
       </AppBar>

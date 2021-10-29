@@ -12,7 +12,9 @@ import {
 
 // import styles from './listing.module.css';
 
-export default function Listing({ businesses }) {
+export default function Listing({ businesses, user }) {
+
+  console.log('listing user console log:', user);
 
   return (
     <TableContainer component={Paper}>

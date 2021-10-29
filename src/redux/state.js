@@ -1,9 +1,6 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  user: {
-    username: "Example User",
-    password: "uuidprobably"
-  },
+  user: { },
   businesses: [
     {
       "id": 0,

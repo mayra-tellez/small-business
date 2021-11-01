@@ -5,7 +5,7 @@ import cookie from 'cookie';
 import Listing from './containers/Listing';
 import Details from './containers/Details';
 import Login from './containers/Login';
-import AddListing from './components/AddListing/AddListing';
+import AddListing from './containers/AddListing';
 
 const checkAuth = () => {
   const cookies = cookie.parse(document.cookie);

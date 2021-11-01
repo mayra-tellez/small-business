@@ -23,11 +23,31 @@ export default function Listing({ businesses, deleteListing }) {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} width="15%" >Name</TableCell>
-              <TableCell style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} width="60%" >Description</TableCell>
-              <TableCell style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} width="10%" >Hours</TableCell>
-              <TableCell style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} width="15%" >Address</TableCell>
-              {cookies.loggedIn && <TableCell style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }}>Delete</TableCell>}
+              <TableCell 
+                style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} 
+                width="15%" >
+                  Name
+              </TableCell>
+              <TableCell 
+                style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} 
+                width="60%" >
+                  Description
+              </TableCell>
+              <TableCell 
+                style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} 
+                width="10%" >
+                  Hours
+              </TableCell>
+              <TableCell 
+                style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} 
+                width="15%" >
+                  Address
+              </TableCell>
+              {cookies.loggedIn && 
+                <TableCell 
+                  style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }}>
+                    Delete
+                </TableCell>}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -37,7 +57,11 @@ export default function Listing({ businesses, deleteListing }) {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  <Link to={`/business/${business.id}`} className={styles.name}>{business.name}</Link>
+                  <Link 
+                    to={`/business/${business.id}`} 
+                    className={styles.name}>
+                      {business.name}
+                  </Link>
                 </TableCell>
                 <TableCell>{business.description}</TableCell>
                 <TableCell>{business.operatingHours}</TableCell>

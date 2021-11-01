@@ -6,3 +6,7 @@
   color: black;
   font-weight: 600;
 }
+
+.delete {
+  color: red
+}

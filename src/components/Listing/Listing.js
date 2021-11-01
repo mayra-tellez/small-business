@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import cookie from 'cookie';
 import {
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
-  TableRow
+  TableRow,
+  IconButton,
 } from '@material-ui/core';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 import styles from './listing.module.css';
 
-export default function Listing({ businesses, user }) {
-
-  console.log('listing user console log:', user);
+export default function Listing({ businesses, deleteListing }) {
+  const cookies = cookie.parse(document.cookie);
 
   return (
     <div className={styles.container}>
@@ -25,10 +27,11 @@ export default function Listing({ businesses, user }) {
               <TableCell style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} width="60%" >Description</TableCell>
               <TableCell style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} width="10%" >Hours</TableCell>
               <TableCell style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }} width="15%" >Address</TableCell>
+              {cookies.loggedIn && <TableCell style={{ color: "gray", fontWeight: "bold", fontSize: "13px" }}>Delete</TableCell>}
             </TableRow>
           </TableHead>
           <TableBody>
-            {businesses.map((business) => (
+            {businesses.map((business, idx) => (
               <TableRow
                 key={business.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -39,6 +42,12 @@ export default function Listing({ businesses, user }) {
                 <TableCell>{business.description}</TableCell>
                 <TableCell>{business.operatingHours}</TableCell>
                 <TableCell>{business.address}</TableCell>
+                {cookies.loggedIn && 
+                  <TableCell>
+                    <IconButton onClick={() => deleteListing(idx)} aria-label="delete" size="medium">
+                      <DeleteIcon className={styles.delete} />
+                    </IconButton>
+                  </TableCell>}
               </TableRow>
             ))}
           </TableBody>

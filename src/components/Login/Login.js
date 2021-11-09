@@ -1,28 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   TextField,
   Button
 } from '@material-ui/core';
 import styles from './login.module.css';
 
-export default function Login({ user }) {
+export default function Login({ user, userLogin }) {
+  console.log('user:', user);
+
+  const [newUser, setNewUser] = useState({ username: "" });
+
+  const handleChange = (e) => {
+    const newState = { ...newUser };
+    newState[e.target.name] = e.target.value;
+
+    setNewUser(newState);
+  }
   
-  console.log('user', user);
-  
-  // ; max-age=300 (in seconds(aka 5 minutes))
-  const login = (e) => {
-    e.preventDefault()
-    document.cookie = "loggedIn=true"
-    window.location.replace("/")
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const payload = { ...newUser };
+    userLogin(payload);
+
+    document.cookie = "loggedIn=true";
+    window.location.replace("/");
   }
 
   return (
     <div className={styles.container}>
-      <form onSubmit={login} className={styles.form}>
+      <form onSubmit={handleLogin} className={styles.form}>
         <TextField
           name="username"
           label="Username"
-          type="text" />
+          type="text"
+          value={newUser.username}
+          onChange={handleChange} />
         <TextField
           name="password"
           label="Password"

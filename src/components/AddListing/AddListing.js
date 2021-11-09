@@ -4,6 +4,7 @@ import {
   Button
 } from '@material-ui/core';
 
+import GoogleMap from '../GoogleMap/GoogleMap';
 import styles from './addListing.module.css';
 
 export default function AddListing({ businesses, addListing }) {
@@ -17,7 +18,7 @@ export default function AddListing({ businesses, addListing }) {
   });
 
   const handleChange = (e) => {
-    let newListing = { ...listing };
+    const newListing = { ...listing };
     newListing[e.target.id] = e.target.value;
     
     setListing(newListing);
@@ -75,10 +76,13 @@ export default function AddListing({ businesses, addListing }) {
             type="submit"
             variant="contained"
             color="primary"
-            style={{ marginTop: 25 }}>
+            style={{ marginTop: 25, width: 300 }}>
           Save</Button>
         </form>
-      </div> 
+      </div>
+      <div className={styles.mapContainer}>
+        <GoogleMap /> 
+      </div>
     </div>
   )
 }

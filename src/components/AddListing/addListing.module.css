@@ -1,6 +1,20 @@
+.mainContainer {
+  margin: 3%;
+  display: flex;
+}
+
+.formContainer {
+  margin-right: 15px;
+  width: 50vw;
+}
+
+.mapContainer {
+  margin-left: 15px;
+  width: 50vw;
+}
+
 .form {
-  width: 500px;
-  margin: 20px;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }

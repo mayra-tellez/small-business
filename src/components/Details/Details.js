@@ -1,4 +1,5 @@
 import React from 'react';
+import GoogleMap from '../GoogleMap/GoogleMap'
 import styles from './details.module.css';
 
 export default function Details(props) {
@@ -12,7 +13,7 @@ export default function Details(props) {
         <h3>{business.address}</h3>
         <h3>{business.operatingHours}</h3>
         <p className={styles.description}>{business.description}</p>
-        <p>GOOGLE MAP NEEDED</p>
+        <GoogleMap />
       </div>
     </div>
   )

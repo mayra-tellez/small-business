@@ -15,4 +15,14 @@ const businesses = (state = [], action) => {
   }
 };
 
-export default combineReducers({ user, businesses });
+
+const map = (state = [], action) => {
+  switch(action.type) {
+      case 'FETCH_COORDINATES':
+          return action.value
+      default:
+          return state
+  }
+}
+
+export default combineReducers({ user, businesses, map });

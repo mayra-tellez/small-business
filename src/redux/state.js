@@ -37,5 +37,6 @@ export default {
       address: "2021 Guadalupe Street, Suite 260, Austin, TX 78705",
       operatingHours: "8AM - 5PM"
     }
-  ]
+  ],
+  map: []
 }

@@ -39,7 +39,6 @@ export default function AddListing({ businesses, addListing }) {
     })
   }
 
-
   return (
     <div className={styles.mainContainer}>
       <div className={styles.formContainer}>

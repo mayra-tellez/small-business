@@ -13,7 +13,7 @@ export default function Details(props) {
         <h3>{business.address}</h3>
         <h3>{business.operatingHours}</h3>
         <p className={styles.description}>{business.description}</p>
-        <GoogleMap />
+        <GoogleMap address={business.address} />
       </div>
     </div>
   )

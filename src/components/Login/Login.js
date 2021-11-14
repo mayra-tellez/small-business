@@ -8,20 +8,20 @@ import styles from './login.module.css';
 export default function Login({ user, userLogin }) {
   console.log('user:', user);
 
-  const [newUser, setNewUser] = useState({ username: "" });
+  // const [newUser, setNewUser] = useState({ username: "" });
 
-  const handleChange = (e) => {
-    const newState = { ...newUser };
-    newState[e.target.name] = e.target.value;
+  // const handleChange = (e) => {
+  //   const newState = { ...newUser };
+  //   newState[e.target.name] = e.target.value;
 
-    setNewUser(newState);
-  }
+  //   setNewUser(newState);
+  // }
   
   const handleLogin = (e) => {
     e.preventDefault();
 
-    const payload = { ...newUser };
-    userLogin(payload);
+    // const payload = { ...newUser };
+    // userLogin(payload);
 
     document.cookie = "loggedIn=true";
     window.location.replace("/");
@@ -34,8 +34,9 @@ export default function Login({ user, userLogin }) {
           name="username"
           label="Username"
           type="text"
-          value={newUser.username}
-          onChange={handleChange} />
+          // value={newUser.username}
+          // onChange={handleChange} 
+        />
         <TextField
           name="password"
           label="Password"
